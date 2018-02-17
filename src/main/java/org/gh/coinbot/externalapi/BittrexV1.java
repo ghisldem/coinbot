@@ -11,6 +11,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.gh.coinbot.util.EncryptionUtility;
+import org.springframework.stereotype.Component;
 
 /**
  * info : https://bittrex.com/home/api
@@ -18,6 +19,7 @@ import org.gh.coinbot.util.EncryptionUtility;
  * @author GHISLAIN
  *
  */
+@Component
 public class BittrexV1 {
 
 	public static final String ORDER_LIMIT = "LIMIT", ORDER_MARKET = "MARKET";
