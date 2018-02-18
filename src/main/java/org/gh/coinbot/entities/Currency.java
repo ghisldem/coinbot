@@ -1,7 +1,10 @@
 package org.gh.coinbot.entities;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -32,6 +35,12 @@ public class Currency {
 	private String coinType;
 	@JsonProperty("BaseAddress")
 	private String baseAddress;
+	
+	@OneToMany(mappedBy= "currencyMarket")
+	private Collection<Market> marketsCurrencyMarket;
+	
+	@OneToMany(mappedBy= "currencyBase")
+	private Collection<Market> marketsCurrencyBase;
 	
 
 }
