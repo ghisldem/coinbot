@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.gh.coinbot.entities.Currency;
 import org.gh.coinbot.entities.Market;
-import org.gh.coinbot.externalapi.BittrexV1;
+import org.gh.coinbot.externalapi.Bittrex;
 import org.gh.coinbot.service.CurrencyService;
 import org.gh.coinbot.service.MarketService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class LaunchProject {
 	@Autowired
 	private CurrencyService currencyService;
 	@Autowired
-	private BittrexV1 bittrex;
+	private Bittrex bittrex;
 	@Autowired
 	private ObjectMapper objectMapper;
 	
