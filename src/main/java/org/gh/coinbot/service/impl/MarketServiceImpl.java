@@ -1,5 +1,7 @@
 package org.gh.coinbot.service.impl;
 
+import java.util.List;
+
 import org.gh.coinbot.entities.Currency;
 import org.gh.coinbot.entities.Market;
 import org.gh.coinbot.repositories.MarketRepository;
@@ -65,6 +67,12 @@ public class MarketServiceImpl implements MarketService {
 	public Page<Market> getAll(int page, int size) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Market> getMarketsByCurrencyBase(String currencyBase) {
+		// TODO Auto-generated method stub
+		return marketRepository.getMarketsByCurrencyBase(currencyBase);
 	}
 
 	

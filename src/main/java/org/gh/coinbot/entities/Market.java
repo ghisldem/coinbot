@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -24,35 +25,28 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Market implements Serializable{
 	@Id
-	@JsonProperty("MarketName")
+
 	private String marketName;
+
+	private String plateform;
 	@Transient
-	@JsonProperty("MarketCurrency")
 	private String marketCurrency;
 	@Transient
-	@JsonProperty("BaseCurrency")
 	private String baseCurrency;
-	@JsonProperty("MarketCurrencyLong")
 	private String marketCurrencyLong;
-	@JsonProperty("BaseCurrencyLong")
 	private String baseCurrencyLong;
-	@JsonProperty("MinTradeSize")
 	private double minTradeSize;
-	@JsonProperty("IsActive")
 	private boolean active;
-	@JsonProperty("Created")
 	private Date created;
+	private String Type;
 	
 	@ManyToOne
 	@JoinColumn(name = "CURRENCY_MARKET_ID", foreignKey = @ForeignKey (name="Fk_market_currencymarket"), nullable = false)
 	private Currency currencyMarket;
 	
 	@ManyToOne
-	@JoinColumn(name = "CURRENCY_BASE_ID", foreignKey = @ForeignKey (name="Fk_market_currencybase"), nullable = false)
+	@JoinColumn(name = "CURRENCY_BASE_ID", foreignKey = @ForeignKey (name="Fk_market_currencybase"), nullable = false )
 	private Currency currencyBase;
-	
-
-	
 	
 
 }

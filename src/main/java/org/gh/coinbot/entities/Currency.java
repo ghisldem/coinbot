@@ -35,7 +35,9 @@ public class Currency {
 	private String coinType;
 	@JsonProperty("BaseAddress")
 	private String baseAddress;
+	private boolean currencyBase;
 	
+
 	@OneToMany(mappedBy= "currencyMarket")
 	private Collection<Market> marketsCurrencyMarket;
 	

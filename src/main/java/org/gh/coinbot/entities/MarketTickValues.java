@@ -31,11 +31,12 @@ public class MarketTickValues {
 	@JoinColumn(name = "MARKET_ID",referencedColumnName="marketName", foreignKey = @ForeignKey (name="Fk_tickValue_market"), nullable = false)
 	private Market market;
 	@JsonProperty("Bid")
-	private double bid;
+	private Double bid;
 	@JsonProperty("Ask")
-	private double ask;
+	private Double ask;
 	@JsonProperty("Last")
-	private double last;
+	private Double last;
 	private Date updateDate;
+	
 	
 }
